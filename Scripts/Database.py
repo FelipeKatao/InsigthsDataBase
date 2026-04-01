@@ -50,14 +50,15 @@ def InsertData(df,con,table):
     con.commit()
     return True
 
-def UpdateData(WhereColumn,columnUpdate,data,id,table,con):
+def UpdateData(WhereColumn,columnUpdate,data,table,con):
     conn  =sqlite3.connect(con)
     cursor =  conn.cursor()
     query =  f"""
-    UPDATE {table}
+    UPDATE  {table}
     SET {columnUpdate} = {data}
     WHERE {WhereColumn}
     """
+    print(query)
     cursor.execute(query)
     conn.commit()
     conn.close()

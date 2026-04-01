@@ -1,4 +1,4 @@
-from DataBase import UpdateData
+from Scripts.Database import UpdateData
 
-def ClearDataColumn(column,df):
-    UpdateData()
+def ClearDataColumn(column,con,columnUpdate,valueUpdate,table):
+    UpdateData(f"{column}",columnUpdate,valueUpdate,table,con)
